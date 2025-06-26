@@ -3,9 +3,11 @@ pipeline {
 
     stages {
         stage('Install Git') {
-            step {
+            steps {
+                sh '''
                 echo "Install git to Rocky Linux"
                 sudo dnf install -y git
+                '''
             }
         }
 
