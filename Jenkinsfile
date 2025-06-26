@@ -2,6 +2,13 @@ pipeline {
     agent { label 'rocky' }
 
     stages {
+        stage('Install Git') {
+            steps {
+                echo "Install git to Rocky Linux"
+                sudo dnf install -y git
+            }
+        }
+
 
         stage('Install Apache') {
             steps {
